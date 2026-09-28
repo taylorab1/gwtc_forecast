@@ -1,0 +1,53 @@
+schema_version = 1
+status = "UNRESOLVED"
+notes = "Codex must replace placeholders only after auditing official PE labels and priors."
+
+[[events]]
+event_id = "GW230627_015337"
+run = "O4a"
+frozen_label = ""
+prior_adapter = ""
+sample_weight_mode = "UNRESOLVED"
+sample_weight_field = ""
+coordinates = ["mass_1_source", "mass_2_source", "mass_ratio", "redshift"]
+validated = false
+
+[[events]]
+event_id = "GW230726_002940"
+run = "O4a"
+frozen_label = ""
+prior_adapter = ""
+sample_weight_mode = "UNRESOLVED"
+sample_weight_field = ""
+coordinates = ["mass_1_source", "mass_2_source", "mass_ratio", "redshift"]
+validated = false
+
+[[events]]
+event_id = "GW230814_230901"
+run = "O4a"
+frozen_label = ""
+prior_adapter = ""
+sample_weight_mode = "UNRESOLVED"
+sample_weight_field = ""
+coordinates = ["mass_1_source", "mass_2_source", "mass_ratio", "redshift"]
+validated = false
+
+[[events]]
+event_id = "GW240414_054515"
+run = "O4b"
+frozen_label = ""
+prior_adapter = ""
+sample_weight_mode = "UNRESOLVED"
+sample_weight_field = ""
+coordinates = ["mass_1_source", "mass_2_source", "mass_ratio", "redshift"]
+validated = false
+
+[[events]]
+event_id = "GW240630_101703"
+run = "O4b"
+frozen_label = ""
+prior_adapter = ""
+sample_weight_mode = "UNRESOLVED"
+sample_weight_field = ""
+coordinates = ["mass_1_source", "mass_2_source", "mass_ratio", "redshift"]
+validated = false

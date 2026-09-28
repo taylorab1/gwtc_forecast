@@ -1,0 +1,59 @@
+schema_version = 1
+status = "DOCUMENTED_SCHEMA_UNVALIDATED"
+source_role = "o4ab_selection_injections"
+documentation_role = "o4ab_selection_documentation"
+events_dataset = "/events"
+time_field = "time_geocenter"
+weight_field = "weights"
+far_threshold_per_year = 1.0
+notes = "Field names and the combined-campaign formula come from the public sensitivity README. Run-specific normalization still requires fixed-point validation."
+
+search_far_field_pattern = "{search}_far"
+found_mask_candidate = "minimum finite FAR across released search-specific *_far fields < far_threshold_per_year"
+
+log_draw_density_fields = [
+  "lnpdraw_mass1_source",
+  "lnpdraw_mass2_source_GIVEN_mass1_source",
+  "lnpdraw_z",
+  "lnpdraw_spin1_magnitude",
+  "lnpdraw_spin1_polar_angle",
+  "lnpdraw_spin1_azimuthal_angle",
+  "lnpdraw_spin2_magnitude",
+  "lnpdraw_spin2_polar_angle",
+  "lnpdraw_spin2_azimuthal_angle",
+]
+
+population_fields = [
+  "mass1_source",
+  "mass2_source",
+  "q",
+  "z",
+  "spin1_magnitude",
+  "spin1_polar_angle",
+  "spin1_azimuthal_angle",
+  "spin2_magnitude",
+  "spin2_polar_angle",
+  "spin2_azimuthal_angle",
+]
+
+[runs.O4a]
+gps_start = 1368975618
+gps_end = 1389456018
+found_mask_expression = "run time mask AND minimum finite search FAR < 1/year"
+parameter_group = "/events"
+log_draw_density_expression = "sum(config.log_draw_density_fields)"
+log_base_weight_expression = "UNRESOLVED_RUN_NORMALIZATION: log(weights) - log(N_generated_O4a)"
+generated_count = 0
+reference_validation = ""
+validated = false
+
+[runs.O4b]
+gps_start = 1396969218
+gps_end = 1422118818
+found_mask_expression = "run time mask AND minimum finite search FAR < 1/year"
+parameter_group = "/events"
+log_draw_density_expression = "sum(config.log_draw_density_fields)"
+log_base_weight_expression = "UNRESOLVED_RUN_NORMALIZATION: log(weights) - log(N_generated_O4b)"
+generated_count = 0
+reference_validation = ""
+validated = false

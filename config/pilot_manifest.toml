@@ -1,0 +1,207 @@
+schema_version = 1
+name = "gwtc_predictive_five_event_pilot"
+description = "Frozen GWTC-3 models, O4 selection injections, official documentation, and five O4 PE events"
+
+# GWTC-3 released population products
+[[files]]
+record_id = 11254021
+filename = "GWTC-3-population-data.tar.gz"
+role = "gwtc3_population_common"
+category = "model"
+extract = true
+extract_subdir = "gwtc3/GWTC-3-population-data"
+expected_md5 = "01197cae2dd3abf7280307fd35a883a9"
+
+[[files]]
+record_id = 11254021
+filename = "analyses_PowerLawPeak.tar.gz"
+role = "gwtc3_powerlaw_peak_hyperposterior"
+category = "hyperposterior"
+extract = true
+extract_subdir = "gwtc3/PowerLawPeak"
+expected_md5 = "85c3b6599287e8083005e2a18778cb36"
+
+[[files]]
+record_id = 11254021
+filename = "analyses_PowerlawDipBreak.tar.gz"
+role = "gwtc3_powerlaw_dip_break_hyperposterior"
+category = "hyperposterior"
+extract = true
+extract_subdir = "gwtc3/PowerlawDipBreak"
+expected_md5 = "3bcae1c520ec2ab09944721552b2a95a"
+
+[[files]]
+record_id = 11254021
+filename = "README.md"
+role = "gwtc3_release_readme"
+category = "metadata"
+extract = false
+expected_md5 = "b41d172c27e32ac81c5e50c5dd05e42a"
+
+[[files]]
+record_id = 11254021
+filename = "README_GWTC-3-population-data.md"
+role = "gwtc3_population_readme"
+category = "metadata"
+extract = false
+expected_md5 = "cae0d911e4a09c452c56fed6515a4b2c"
+
+[[files]]
+record_id = 11254021
+filename = "GWTC-3-population_py_requirements.txt"
+role = "gwtc3_original_python_requirements"
+category = "metadata"
+extract = false
+expected_md5 = "0e307a6ef64788a2999ea9e780257398"
+
+[[files]]
+record_id = 11254021
+filename = "PowerLaw_Peak_DipBreak_Spline_Tutorial.html"
+role = "gwtc3_mass_model_tutorial"
+category = "metadata"
+extract = false
+expected_md5 = "5c9f33a461948beba75f773dab59a601"
+
+# O4a+O4b selection campaign
+[[files]]
+record_id = 19500064
+filename = "samples-rpo4ab-1366933504-55469568-clipped.hdf"
+role = "o4ab_selection_injections"
+category = "selection"
+extract = false
+expected_md5 = "a1106c27ec6cfd906231613523f7b174"
+
+[[files]]
+record_id = 19500064
+filename = "gwtc-5_o4ab_sensitivity-estimates.md"
+role = "o4ab_selection_documentation"
+category = "metadata"
+extract = false
+expected_md5 = "457b02eca6088eb8cc23a97f37b01f8b"
+
+# GWTC-5 event list and lightweight scripts only (not the 25 GB popsummary archive)
+[[files]]
+record_id = 20292639
+filename = "Event_list.tar.gz"
+role = "gwtc5_population_event_list"
+category = "metadata"
+extract = true
+extract_subdir = "gwtc5/Event_list"
+expected_md5 = "a4d3a1054cccfca5d72b58f5673dcf0b"
+
+[[files]]
+record_id = 20292639
+filename = "scripts.tar.gz"
+role = "gwtc5_population_figure_scripts"
+category = "metadata"
+extract = true
+extract_subdir = "gwtc5/figure_scripts"
+expected_md5 = "f6e5d711b54e8059dc1533835785bd88"
+
+[[files]]
+record_id = 20292639
+filename = "README.md"
+role = "gwtc5_population_readme"
+category = "metadata"
+extract = false
+expected_md5 = "2f3245f1c5cf48be80d16fc64bdb8114"
+
+# O4a PE documentation, summary, checksums, and three pilot events
+[[files]]
+record_id = 20275769
+filename = "GWTC4p1_PE_data_release.ipynb"
+role = "o4a_official_pe_tutorial"
+category = "metadata"
+extract = false
+expected_md5 = "fc8f7abd27d05a88724f91405e20dad3"
+
+[[files]]
+record_id = 20275769
+filename = "IGWN-GWTC4p1-18965dda8_5-PESummaryTable.hdf5"
+role = "o4a_pe_summary"
+category = "metadata"
+extract = false
+expected_md5 = "1e56cb4ebd8631b6f7ccc68bd89e6319"
+
+[[files]]
+record_id = 20275769
+filename = "md5sums.txt"
+role = "o4a_release_checksums"
+category = "metadata"
+extract = false
+expected_md5 = "fc02e49dda8c3032156521d325f25d4c"
+
+[[files]]
+record_id = 20275769
+filename = "IGWN-GWTC4p1-18965dda8_5-GW230627_015337-combined_PEDataRelease.hdf5"
+role = "pilot_o4a_low_mass_bbh"
+category = "event_pe"
+run = "O4a"
+event_id = "GW230627_015337"
+extract = false
+expected_md5 = "f60b1ad03a45e208eb537c100c153708"
+
+[[files]]
+record_id = 20275769
+filename = "IGWN-GWTC4p1-18965dda8_5-GW230726_002940-combined_PEDataRelease.hdf5"
+role = "pilot_o4a_higher_mass_bbh"
+category = "event_pe"
+run = "O4a"
+event_id = "GW230726_002940"
+extract = false
+expected_md5 = "565915d31c5978097ff68740898abf5d"
+
+[[files]]
+record_id = 20275769
+filename = "IGWN-GWTC4p1-18965dda8_5-GW230814_230901-combined_PEDataRelease.hdf5"
+role = "pilot_o4a_high_snr_bbh"
+category = "event_pe"
+run = "O4a"
+event_id = "GW230814_230901"
+extract = false
+expected_md5 = "ed07745b88c75f203a8c0c493295837a"
+
+# O4b PE documentation, summary, checksums, and two pilot events
+[[files]]
+record_id = 20348005
+filename = "GWTC5p0_PE_data_release.ipynb"
+role = "o4b_official_pe_tutorial"
+category = "metadata"
+extract = false
+expected_md5 = "adc9b6b3da5264c77b1fbd41a1423b7f"
+
+[[files]]
+record_id = 20348005
+filename = "IGWN-GWTC5p0-29ebe06b7_25-PESummaryTable.hdf5"
+role = "o4b_pe_summary"
+category = "metadata"
+extract = false
+expected_md5 = "4655c648713f5f7c52256b9dbda7a0ff"
+
+[[files]]
+record_id = 20348005
+filename = "md5sums.txt"
+role = "o4b_release_checksums"
+category = "metadata"
+extract = false
+expected_md5 = "708b468eadbdbbc7779c1d4968aa5e45"
+
+[[files]]
+record_id = 20348005
+filename = "IGWN-GWTC5p0-29ebe06b7_25-GW240414_054515-combined_PEDataRelease.hdf5"
+role = "pilot_o4b_early_high_confidence_bbh"
+category = "event_pe"
+run = "O4b"
+event_id = "GW240414_054515"
+extract = false
+expected_md5 = "8e1ff0d50c3cbcd39a5921be0e863815"
+
+[[files]]
+record_id = 20348005
+filename = "IGWN-GWTC5p0-29ebe06b7_25-GW240630_101703-combined_PEDataRelease.hdf5"
+role = "pilot_o4b_hlv_high_confidence_bbh"
+category = "event_pe"
+run = "O4b"
+event_id = "GW240630_101703"
+extract = false
+expected_md5 = "f846c78f601d2bebfaa8b39a39bcaa4d"

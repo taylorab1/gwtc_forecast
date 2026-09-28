@@ -1,0 +1,28 @@
+schema_version = 1
+
+[storage]
+external_mount = "/media/oamacias/LaCie"
+root = "/media/oamacias/LaCie/GW_Project_Data"
+require_mountpoint = true
+require_separate_device = true
+minimum_free_gib = 20.0
+
+[layout]
+raw = "raw"
+extracted = "extracted"
+processed = "processed"
+results = "results"
+cache = "cache"
+manifests = "manifests"
+logs = "logs"
+tmp = "tmp"
+
+[download]
+chunk_mib = 8
+connect_timeout_seconds = 30
+read_timeout_seconds = 300
+max_attempts = 6
+user_agent = "gwtc-forecast/0.4.0 academic reproducibility workflow"
+
+[guards]
+max_repository_file_mib = 20

@@ -1,0 +1,15 @@
+gwtc_forecast drop-in replacement
+version: 0.4.0
+build date: 2026-08-28
+pytest: 43 passed
+compileall: PASS
+package imports: 37 PASS
+shell syntax: 14 PASS
+TOML parsing: 11 PASS
+notebook clean-state checks: 4 PASS
+wheel build/import: PASS
+repository data guard: PASS
+toy workflow: PASS
+ruff: NOT RUN (unavailable in artifact container)
+public-release adapters: NOT VALIDATED
+real-data score: NOT PRODUCED

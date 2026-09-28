@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gwtc-forecast"
+version = "0.4.0"
+description = "Prediction-first catalog-to-catalog validation of GW compact-binary populations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "GWTC forecast project"}]
+dependencies = [
+  "requests>=2.31,<3",
+  "numpy>=2.0,<3",
+  "scipy>=1.14,<2",
+  "pandas>=2.2,<3",
+  "h5py>=3.10,<4",
+  "PyYAML>=6,<7",
+  "tqdm>=4.66,<5",
+  "matplotlib>=3.8,<4",
+]
+
+[project.optional-dependencies]
+science = [
+  "bilby==2.7.1",
+  "gwpopulation==1.3.1",
+  "pesummary==1.7.0",
+  "popsummary==0.1.0",
+  "zenodo-get==2.0.0",
+]
+dev = [
+  "pytest>=8,<10",
+  "pytest-cov>=5,<7",
+  "ruff>=0.8,<1",
+  "nbformat>=5.10,<6",
+]
+
+[project.scripts]
+gwtc-forecast = "gwtc_forecast.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gwtc_forecast = ["defaults/*.toml"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 92
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.coverage.run]
+source = ["gwtc_forecast"]
+branch = true

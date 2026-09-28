@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Local environments and IDE
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Conda/environment locks are text and should be committed; package caches are not
+.conda/
+.pip-cache/
+
+# Never store scientific data or generated products in the repository
+data/
+raw/
+extracted/
+processed/
+results/
+cache/
+logs/
+tmp/
+*.h5
+*.hdf
+*.hdf5
+*.fits
+*.fits.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.part
+*.npy
+*.npz
+*.parquet
+*.pickle
+*.pkl
+
+# OS/cloud synchronization noise
+.DS_Store
+Thumbs.db
+*~
+.~lock.*

@@ -1,0 +1,43 @@
+schema_version = 1
+name = "gwtc3_to_o4_predictive_validation"
+primary_question = "Can frozen GWTC-3 population models be calibrated and compared on held-out O4 data without mistaking the five-event integration slice for the final population result?"
+real_data_scoring_enabled = false
+
+[pilot]
+events = [
+  "GW230627_015337",
+  "GW230726_002940",
+  "GW230814_230901",
+  "GW240414_054515",
+  "GW240630_101703",
+]
+chronological_order = [
+  "GW230627_015337",
+  "GW230726_002940",
+  "GW230814_230901",
+  "GW240414_054515",
+  "GW240630_101703",
+]
+models = ["PowerLawPeak", "PowerlawDipBreak"]
+runs = ["O4a", "O4b"]
+
+[coordinates]
+primary_mass = "mass_1_source"
+secondary_mass = "mass_2_source"
+mass_ratio = "mass_ratio"
+redshift = "redshift"
+
+[numerical_gates]
+minimum_event_ess = 100.0
+minimum_selection_ess = 1000.0
+maximum_joint_prequential_difference = 1.0e-10
+maximum_mc_sigma_delta_s = 0.5
+maximum_fractional_mc_error = 0.2
+
+[production_gates]
+pe_labels_frozen = false
+pe_priors_validated = false
+injection_mapping_validated = false
+selection_reference_validated = false
+released_models_validated = false
+mock_calibration_passed = false

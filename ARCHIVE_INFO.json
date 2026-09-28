@@ -1,0 +1,11 @@
+{
+  "build_date": "2026-08-28",
+  "offline_tests_passed": 43,
+  "package_version": "0.4.0",
+  "public_release_adapters_validated": false,
+  "real_data_score_produced": false,
+  "real_data_scoring_enabled": false,
+  "schema": "gwtc_forecast.drop_in_replacement.v1",
+  "source_baseline_archive": "gwtc_forecast.zip",
+  "source_baseline_sha256": "f58768aa81b7b6f9005b3d3bd1b9d486580d711b626b94068abafbb0e1d60526"
+}
