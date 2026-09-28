@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Any
 
 from ..io.pe_summary import read_pe_summary_table, write_pe_index_csv

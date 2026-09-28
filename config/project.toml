@@ -1,8 +1,8 @@
 schema_version = 1
 
 [storage]
-external_mount = "/media/oamacias/LaCie"
-root = "/media/oamacias/LaCie/GW_Project_Data"
+external_mount = "/Projects"
+root = "/Projects/Data/macias/924994587/GW_Project_Data"
 require_mountpoint = true
 require_separate_device = true
 minimum_free_gib = 20.0

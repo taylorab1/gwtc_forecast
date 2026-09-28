@@ -52,8 +52,8 @@ def assert_external_storage(config: ProjectConfig, *, write_test: bool) -> None:
                 f"Safety stop: {mount} is on the same device as /. "
                 "The external disk may not be mounted."
             )
-    if not os.access(mount, os.W_OK | os.X_OK):
-        raise StorageGuardError(f"External mount is not writable: {mount}")
+    if root.exists() and not os.access(root, os.W_OK | os.X_OK):
+        raise StorageGuardError(f"External data root is not writable: {root}")
 
     if write_test:
         root.mkdir(parents=True, exist_ok=True)

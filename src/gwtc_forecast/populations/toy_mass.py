@@ -64,7 +64,6 @@ class PowerLawPlusPeak:
 
     def log_prob(self, samples, hyperparameters) -> np.ndarray:
         mass = _mass(samples)
-        alpha = float(hyperparameters["alpha"])
         low = float(hyperparameters["m_min"])
         high = float(hyperparameters["m_max"])
         fraction = float(hyperparameters["peak_fraction"])
