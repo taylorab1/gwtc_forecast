@@ -1,6 +1,6 @@
 schema_version = 1
-name = "gwtc3_to_o4_predictive_validation"
-primary_question = "Can frozen GWTC-3 population models be calibrated and compared on held-out O4 data without mistaking the five-event integration slice for the final population result?"
+name = "matched_feature_predictive_audit"
+primary_question = "Does a localized high-mass excess improve held-out prediction beyond a matched bendable continuum and common low-mass feature?"
 real_data_scoring_enabled = false
 
 [pilot]
@@ -18,7 +18,7 @@ chronological_order = [
   "GW240414_054515",
   "GW240630_101703",
 ]
-models = ["PowerLawPeak", "PowerlawDipBreak"]
+models = ["matched_bbh_continuum", "matched_bbh_highpeak"]
 runs = ["O4a", "O4b"]
 
 [coordinates]

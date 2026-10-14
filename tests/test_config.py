@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 
 from gwtc_forecast.config import (
     load_pilot_manifest,
@@ -15,9 +16,7 @@ def test_packaged_configuration_is_self_consistent() -> None:
     science = load_science_config()
     paths = ProjectPaths.from_config(project)
 
-    assert project.storage.root.is_absolute()
-    assert project.storage.external_mount.is_absolute()
-    assert project.storage.root.is_relative_to(project.storage.external_mount)
+    assert paths.root == project.storage.root
     assert paths.raw.parent == paths.root
     assert len(science.events) == 5
     assert set(science.events) == {

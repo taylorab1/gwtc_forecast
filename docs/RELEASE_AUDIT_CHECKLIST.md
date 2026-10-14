@@ -1,3 +1,5 @@
+> Inherited v0.4 release-reference notes. Verify against the actual pinned release; follow the v0.5 SCIENCE_CHARTER and REAL_DATA_WORKFLOW for current scope.
+
 # Release-audit checklist
 
 ## Event PE files

@@ -1,60 +1,15 @@
-# Known gaps and deliberate stops
+# Known gaps and non-claims
 
-This repository is a strong baseline, not a completed astrophysical analysis.
-The following gaps are intentional and must not be hidden.
+The replacement is a runnable development baseline, not a finished public-catalog analysis.
 
-## 1. PE-prior reconstruction is not yet release-specific
+**Real released inputs:** A complete through-O3 PE/selection manifest, exact event-level PE prior adapters, final analysis labels and weighted-sample conventions, and independently verified O3/O4 injection normalization are not supplied as validated. Five inherited pilot events remain for integration. Generic HDF5/coordinate helpers do not solve release-specific statistical semantics.
 
-The lightweight summary-table index now enumerates every candidate label and
-checks the event-file mapping, while the PESummary reader can inspect posterior
-columns. The code still does not guess the correct mixed/default label or
-reconstruct every event's exact prior and coordinate Jacobian. Production
-scoring remains disabled until this is implemented and tested for all five
-events.
+**Scientific prescription:** The matched density is implemented and normalization-tested, but its full candidate priors, support/tapers, shared continuum flexibility and population factorization still need training-only review. No continuous full-BBH training fit has been performed here. The optional Bilby adapter has only interface/likelihood tests in this build, not an actual installed-Bilby/Dynesty run.
 
-## 2. O4 run-specific injection normalization is not yet validated
+**Realistic observations:** The executable one-dimensional noisy-mass detector is synthetic. A public-data-relevant measurement-aware mock strategy remains a research task. Its correctly specified finite-grid SBC does not demonstrate robustness to misspecification, realistic degeneracies or public-release systematics.
 
-The repository now knows the documented `/events` table, source parameters,
-log-draw components, search FAR fields, mixture-weight column, and official O4a
-and O4b time windows. The core `SelectionCampaign` object implements the
-importance-sampling algebra once normalized `log_base_weight` is supplied. The
-remaining hard problem is deriving the separate O4a/O4b generated-count and
-wall-time mixture normalization and validating it against independent code.
+**Numerical precision:** The example compares one Monte Carlo realization with quadrature. Its discrepancy is not an error bar. There are paired-summary and guarded iid-resampling helpers, not a validated total public-data PE+injection+training-posterior error estimator. Importance-weight support and independent training-inference stability need qualification at actual scale.
 
-## 3. Released GWTC-3 model adapters are not yet implemented
+**Runtime/environment:** Tests and the synthetic CLI were run in the build environment; the user's Linux/Conda/external-disk environment was not accessed or changed. The optional inherited science environment was not solved here. Ruff was unavailable and could not be installed in this network-restricted environment; no lint pass is claimed. See `VALIDATION.md` for exact executed evidence.
 
-The downloader and discovery tools expose the extracted products. The toy
-smooth/peak/break models validate statistical machinery only. They are not a
-replacement for the released multidimensional GWTC-3 models.
-
-## 4. No real-data predictive score is produced by the baseline
-
-That is a feature. Producing a number before the three mappings above are
-validated would create a convincing but scientifically unreliable result.
-
-## 5. The pilot is not the final event sample
-
-Five events test the software chain and numerical information content. Any
-catalog-level astrophysical conclusion requires the frozen official O4
-population event list and all corresponding PE files.
-
-## 6. Count/rate prediction is postponed
-
-The initial score conditions on the observed count and focuses on population
-shape. Merger-rate and observing-time uncertainties are a separate extension.
-
-## 7. PE row-weight semantics are not yet frozen for public products
-
-The processed event v2 contract can represent unequal posterior-row weights,
-and equal-weight v1 files remain readable. The release adapter must still
-document whether each selected PE label is equal weight and identify the exact
-source weight field when it is not. The baseline never infers this from column
-names alone.
-
-## 8. The detected-space power gate is implemented but not executed
-
-`config/detected_power_gate.toml` and `gwtc-forecast power-gate` provide a frozen
-bidirectional decision rule. They do not generate public-release mock catalogs.
-The released-model and injection adapters must pass first, and at least 2,000
-qualified mocks per generating direction are required before a final pass or
-no-go decision. Accordingly, `mock_calibration_passed` remains `false`.
+**Authorization:** Input path existence, metadata booleans, passing tests or a numeric power pass do not constitute scientific authorization. No real population conclusion, rate measurement, prospective forecast, formation-channel identification, future observing-run schedule or citation forecast is delivered.

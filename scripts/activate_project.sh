@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # Source this file: source scripts/activate_project.sh
+case $- in
+  *u*) _GWTC_CALLER_HAD_NOUNSET=1 ;;
+  *)   _GWTC_CALLER_HAD_NOUNSET=0 ;;
+esac
+
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -26,3 +31,7 @@ fi
 
 echo "Activated ${ENV_NAME}"
 echo "Repository: ${REPO_ROOT}"
+if [[ "${_GWTC_CALLER_HAD_NOUNSET}" -eq 0 ]]; then
+  set +u
+fi
+unset _GWTC_CALLER_HAD_NOUNSET

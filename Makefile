@@ -8,7 +8,11 @@ RUN := ./scripts/run_in_env.sh
 
 help:
 	@printf '%s\n' \
-	  'setup            Create/update the dedicated Conda environment' \
+	  'student-setup    Minimal local learning environment (recommended first)' \
+	  'feature-demo     Full synthetic train/freeze/predict run; set OUTPUT=/tmp/new-attempt' \
+	  'feature-calibration  Repeated synthetic training and SBC reference' \
+	  'study-audit      Explain deliberately missing real-study inputs' \
+	  'setup            Optional full inherited science environment' \
 	  'bootstrap        Create the guarded external data tree' \
 	  'status           Check mount, paths, free space, and repository size' \
 	  'plan             Resolve the pinned Zenodo pilot without downloading' \
@@ -107,3 +111,16 @@ jupyter:
 
 clean-pyc:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +
+
+.PHONY: student-setup feature-demo feature-calibration study-audit
+student-setup:
+	./scripts/setup_student.sh
+
+feature-demo:
+	$(RUN) gwtc-forecast feature-demo $(if $(OUTPUT),--output $(OUTPUT),)
+
+feature-calibration:
+	$(RUN) gwtc-forecast feature-calibration $(if $(OUTPUT),--output $(OUTPUT),)
+
+study-audit:
+	$(RUN) gwtc-forecast study-audit

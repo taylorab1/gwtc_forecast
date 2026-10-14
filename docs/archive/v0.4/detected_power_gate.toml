@@ -1,0 +1,16 @@
+schema_version = 1
+master_seed = 20260827
+
+[design]
+generating_models = ["PowerLawPeak", "PowerlawDipBreak"]
+preliminary_replicates_per_direction = 250
+final_replicates_per_direction = 2000
+bootstrap_replicates = 1000
+
+[thresholds]
+# Project investment thresholds, not universal discovery standards.
+minimum_median_signed_score = 5.0
+maximum_wrong_sign_probability = 0.10
+minimum_q05_signed_score = 0.0
+maximum_median_standard_error = 0.25
+maximum_wrong_sign_standard_error = 0.01

@@ -2,7 +2,7 @@ schema_version = 1
 master_seed = 20260827
 
 [design]
-generating_models = ["PowerLawPeak", "PowerlawDipBreak"]
+generating_models = ["matched_bbh_continuum", "matched_bbh_highpeak"]
 preliminary_replicates_per_direction = 250
 final_replicates_per_direction = 2000
 bootstrap_replicates = 1000

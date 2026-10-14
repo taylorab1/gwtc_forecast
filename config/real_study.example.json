@@ -1,0 +1,13 @@
+{
+  "description": "Fill with frozen contract paths after the relevant qualification milestones. Paths are relative to this JSON or absolute. No public data are inferred from this template.",
+  "prior_spec": "matched_bbh_priors.json",
+  "qualification_report": "",
+  "training_event_contracts": [],
+  "heldout_event_contracts": [],
+  "selection_contracts": {},
+  "training_posteriors": {
+    "continuum": "",
+    "highpeak": ""
+  },
+  "allow_retrospective_scoring": false
+}

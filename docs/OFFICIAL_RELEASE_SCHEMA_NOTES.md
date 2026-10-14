@@ -1,3 +1,5 @@
+> Inherited v0.4 release-reference notes. Verify against the actual pinned release; follow the v0.5 SCIENCE_CHARTER and REAL_DATA_WORKFLOW for current scope.
+
 # Official release schema notes for the first Codex campaign
 
 These notes distill the public release documentation already included in the

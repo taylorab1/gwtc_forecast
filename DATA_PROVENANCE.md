@@ -1,23 +1,7 @@
-# Data provenance policy
+# Data and execution provenance
 
-Every raw file is identified by:
+No large GW release was downloaded or analyzed in constructing v0.5. The supplied v0.4 ZIP and its manifests were the starting code snapshot. Official current literature and release documentation informed the redesigned scope; see docs/LITERATURE.md. The original v0.4 ZIP SHA256 is fcc003a88c1a11b934fa701e6b779823513141ba6146d4998023db359f393991.
 
-- Zenodo record ID and DOI;
-- release version when exposed by Zenodo;
-- exact filename;
-- byte size;
-- official MD5 checksum;
-- local destination;
-- retrieval timestamp.
+For actual studies, record release record/version, filename/checksum, event identity/run, PE label/prior/weight convention, coordinate cosmology, selection definition/normalization and independent validation. Preserve a connection from inputs and effective configuration to code/environment, randomness, attempt and report. Do not duplicate the same facts across multiple bespoke ledgers.
 
-The resolved download plan is written to the external `manifests/` directory.
-Raw inputs are immutable. Derived contracts must include source paths, source
-checksums, analysis labels, coordinate conventions, software version, and a
-creation timestamp.
-
-Deletion of a large raw PE file is allowed only after:
-
-1. its compact processed contract has passed round-trip validation;
-2. the contract records the official checksum;
-3. the raw file can be redownloaded from the pinned record;
-4. the deletion is documented in an external manifest.
+The included demo outputs are synthetic and identify their seed/configuration. They are reference examples, not population measurements. Recreate bulk contracts outside the code repository. Existing environment-lock files are inherited historical information, not the environment executed for this build; current evidence is in VALIDATION.md and examples/build_evidence/.

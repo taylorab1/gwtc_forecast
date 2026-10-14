@@ -1,0 +1,17 @@
+schema_version = 1
+status = "UNRESOLVED"
+notes = "Legacy filename retained for compatibility. Entries now describe new matched-model training products, not released LVK posteriors. Use study-audit for the primary workflow."
+
+[models.matched_bbh_continuum]
+source_role = "new_through_O3_matched_training"
+posterior_file = ""
+weight_column = ""
+parameter_mapping = ""
+validated = false
+
+[models.matched_bbh_highpeak]
+source_role = "new_through_O3_matched_training"
+posterior_file = ""
+weight_column = ""
+parameter_mapping = ""
+validated = false

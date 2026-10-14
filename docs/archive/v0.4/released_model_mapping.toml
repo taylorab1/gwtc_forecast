@@ -1,0 +1,17 @@
+schema_version = 1
+status = "UNRESOLVED"
+notes = "Use executable released model code and posterior metadata wherever available."
+
+[models.PowerLawPeak]
+source_role = "gwtc3_powerlaw_peak_hyperposterior"
+posterior_file = ""
+weight_column = ""
+parameter_mapping = ""
+validated = false
+
+[models.PowerlawDipBreak]
+source_role = "gwtc3_powerlaw_dip_break_hyperposterior"
+posterior_file = ""
+weight_column = ""
+parameter_mapping = ""
+validated = false
