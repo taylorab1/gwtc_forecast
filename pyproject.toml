@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gwtc-forecast"
-version = "0.4.0"
+version = "0.5.0"
 description = "Prediction-first catalog-to-catalog validation of GW compact-binary populations"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -23,7 +23,7 @@ dependencies = [
 
 [project.optional-dependencies]
 science = [
-  "bilby==2.7.1",
+  "bilby==2.6.0",
   "gwpopulation==1.3.1",
   "pesummary==1.7.0",
   "popsummary==0.1.0",

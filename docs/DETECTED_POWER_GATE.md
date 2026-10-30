@@ -1,90 +1,28 @@
-# Detected-space power qualification contract
+# Uncertainty-aware power decision
 
-This document specifies the machine decision that sits between the five-event
-real-data integration slice and the expensive full-O4 PE campaign.
+The default `power-gate` command now uses `statistics/qualification.py`. The v0.4 point-threshold implementation remains importable only for historical regression tests; it is not the recommended decision method.
 
-## Scientific role
+The frozen configuration retains 250 preliminary and 2000 final independent catalogs per generating direction, with 1000 median-bootstrap repetitions. A signed score is positive when the model that generated the catalog wins. Retain all planned valid trials and account for every numerical failure; failed trials cannot simply be removed from a final input file.
 
-For a mock catalog generated under model \(M_g\), define a signed score
+Final investment targets are median>=5, wrong-sign probability<=0.10, fifth percentile>0, median SE<=0.25, and wrong-sign SE<=0.01. The enhanced assessor uses distribution-free order-statistic intervals and Wilson binomial intervals. It does not report zero uncertainty because no wrong classifications were seen. A threshold-overlapping confidence interval produces INCONCLUSIVE, not a pass. Extra trials beyond the frozen final count are rejected rather than interpreted as a new favorable stopping point.
 
-\[
-T = S_{M_g}-S_{M_{\rm alternative}}.
-\]
-
-Positive \(T\) means that the generating model won. Scores must be supplied in
-both generating directions. A model that wins regardless of which model
-created the data has not demonstrated bidirectional identifiability.
-
-The power gate is a best-case detected-space qualification. It is not a
-real-data result, an absolute model-adequacy test, or permission to claim that a
-physical peak or break has been isolated.
-
-## Input schema
-
-`gwtc-forecast power-gate` consumes JSON of the form
+Input remains the compatible small JSON format:
 
 ```json
 {
   "schema": "gwtc_forecast.detected_power_scores.v1",
-  "signed_scores_by_generating_model": {
-    "PowerLawPeak": [6.2, 7.1, 5.8],
-    "PowerlawDipBreak": [5.9, 6.5, 7.0]
-  },
   "metadata": {
-    "run_contract": "O4a+O4b conditioned counts",
-    "code_commit": "<commit>",
-    "injection_folds": 5
+    "purpose": "REPLACE with the actual qualified experiment",
+    "observation_model_reference": "REPLACE with inspected evidence",
+    "all_planned_trials_accounted_for": false
+  },
+  "signed_scores_by_generating_model": {
+    "matched_bbh_continuum": [],
+    "matched_bbh_highpeak": []
   }
 }
 ```
 
-The short arrays above are illustrative only. The final gate requires the
-replicate count frozen in `config/detected_power_gate.toml`.
+Empty scores correctly fail validation. Run `gwtc-forecast power-gate /path/to/scores.json --output /path/to/new_decision.json`. It preserves numeric thresholds from `config/detected_power_gate.toml`. Existing decision files are not overwritten. Statistical assessment does not independently establish the scientific validity of the input metadata; the relevant report must be reviewed.
 
-## Frozen thresholds
-
-For each generating direction:
-
-- median signed score at least 5 nats;
-- wrong-sign probability at most 0.10;
-- fifth percentile strictly above zero;
-- bootstrap standard error of the median at most 0.25 nat;
-- binomial standard error of the wrong-sign probability at most 0.01;
-- at least 2,000 completed qualified mocks.
-
-These are project investment thresholds, not general discovery standards.
-Changing them after examining mock or real-data results is forbidden.
-
-## Command
-
-```bash
-gwtc-forecast power-gate \
-  /path/to/detected_power_scores.json \
-  --gate-config config/detected_power_gate.toml \
-  --output /path/to/detected_power_decision.json
-```
-
-or
-
-```bash
-make power-gate SCORES=/path/to/detected_power_scores.json
-```
-
-## Terminal states
-
-- `QUALIFICATION_INCOMPLETE_MORE_MOCKS_REQUIRED`: at least the preliminary
-  sample exists, but a final pass/no-go is not authorized.
-- `PASS_DETECTED_POWER_GATE`: both generating directions pass all frozen gates.
-- `NO_GO_INSUFFICIENT_DETECTED_POWER`: the final mock sample is complete and at
-  least one generating direction fails.
-
-Technical problems such as an invalid schema, missing model direction, or
-nonfinite score produce an explicit command failure rather than a scientific
-no-go.
-
-## What a pass authorizes
-
-A pass authorizes preparation of a separately reviewed, prespecified full-O4 PE
-campaign. It does not turn on `real_data_scoring_enabled`, validate the public
-release adapters, establish model adequacy, or support a peak-versus-break
-physical conclusion.
+PASS supports consideration of the next investment, not an astronomical detection. NO_GO is limited to this model pair/design/generating regime. INCOMPLETE, INCONCLUSIVE and invalid execution are distinct from NO_GO. The learning demo's 20 trials and finite one-dimensional grid cannot qualify real-data analysis.

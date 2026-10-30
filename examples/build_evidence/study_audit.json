@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "missing": [
+    "training_event_contracts: no contracts listed",
+    "heldout_event_contracts: no contracts listed",
+    "no selection contracts listed",
+    "qualification_report: missing",
+    "priors are development candidates, not frozen"
+  ],
+  "automatic_authorization": false,
+  "next_step": "Resolve only the inputs required by the current milestone; do not download the full catalog now."
+}

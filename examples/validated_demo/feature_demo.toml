@@ -1,0 +1,42 @@
+schema_version = 1
+purpose = "synthetic_learning_and_implementation_reference_only"
+seed = 20260904
+training_count = 40
+heldout_count_per_run = 24
+sigma_log_mass = 0.16
+quadrature_nodes = 384
+posterior_samples = 512
+generated_injections = 30000
+power_replicates_per_direction = 20
+
+[mass_domain]
+m_min = 5.0
+m_max = 160.0
+
+[shared_fixed]
+break_width = 0.18
+mu_low = 10.0
+sigma_low = 1.8
+
+[shared_axes]
+alpha_low = [1.0, 2.0, 3.0]
+alpha_high = [3.0, 5.0]
+m_break = [25.0, 35.0, 45.0]
+f_low = [0.05, 0.2]
+
+[feature_axes]
+f_high = [0.05, 0.15, 0.3]
+mu_high = [30.0, 40.0]
+sigma_high = [3.0, 7.0]
+
+[generating_parameters]
+alpha_low = 2.0
+alpha_high = 5.0
+m_break = 35.0
+break_width = 0.18
+f_low = 0.2
+mu_low = 10.0
+sigma_low = 1.8
+f_high = 0.15
+mu_high = 30.0
+sigma_high = 3.0

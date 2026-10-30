@@ -1,6 +1,6 @@
 schema_version = 1
 name = "gwtc_predictive_five_event_pilot"
-description = "Frozen GWTC-3 models, O4 selection injections, official documentation, and five O4 PE events"
+description = "Release documentation, reference data, O4 selection, and five integration-only PE events; through-O3 training events still require a frozen manifest"
 
 # GWTC-3 released population products
 [[files]]
@@ -11,24 +11,6 @@ category = "model"
 extract = true
 extract_subdir = "gwtc3/GWTC-3-population-data"
 expected_md5 = "01197cae2dd3abf7280307fd35a883a9"
-
-[[files]]
-record_id = 11254021
-filename = "analyses_PowerLawPeak.tar.gz"
-role = "gwtc3_powerlaw_peak_hyperposterior"
-category = "hyperposterior"
-extract = true
-extract_subdir = "gwtc3/PowerLawPeak"
-expected_md5 = "85c3b6599287e8083005e2a18778cb36"
-
-[[files]]
-record_id = 11254021
-filename = "analyses_PowerlawDipBreak.tar.gz"
-role = "gwtc3_powerlaw_dip_break_hyperposterior"
-category = "hyperposterior"
-extract = true
-extract_subdir = "gwtc3/PowerlawDipBreak"
-expected_md5 = "3bcae1c520ec2ab09944721552b2a95a"
 
 [[files]]
 record_id = 11254021

@@ -1,0 +1,24 @@
+{
+  "status": "development_candidate_not_frozen_for_real_data",
+  "model_options": {"m_min": 5.0, "m_max": 160.0, "m2_min": 3.0, "z_max": 3.0, "omega_m": 0.3089},
+  "shared": {
+    "alpha_low": {"distribution": "Uniform", "minimum": -2.0, "maximum": 5.0},
+    "alpha_high": {"distribution": "Uniform", "minimum": 0.0, "maximum": 10.0},
+    "m_break": {"distribution": "Uniform", "minimum": 20.0, "maximum": 60.0},
+    "break_width": 0.18,
+    "f_low": {"distribution": "Uniform", "minimum": 0.0, "maximum": 0.6},
+    "mu_low": {"distribution": "Uniform", "minimum": 8.0, "maximum": 13.0},
+    "sigma_low": {"distribution": "Uniform", "minimum": 0.5, "maximum": 4.0},
+    "beta_q": {"distribution": "Uniform", "minimum": -2.0, "maximum": 8.0},
+    "kappa": {"distribution": "Uniform", "minimum": -4.0, "maximum": 8.0},
+    "spin_mean": {"distribution": "Uniform", "minimum": 0.05, "maximum": 0.8},
+    "spin_concentration": {"distribution": "Uniform", "minimum": 2.0, "maximum": 40.0},
+    "aligned_fraction": {"distribution": "Uniform", "minimum": 0.0, "maximum": 1.0},
+    "tilt_sigma": {"distribution": "Uniform", "minimum": 0.1, "maximum": 2.0}
+  },
+  "feature_only": {
+    "f_high": {"distribution": "Uniform", "minimum": 0.0, "maximum": 0.4},
+    "mu_high": {"distribution": "Uniform", "minimum": 20.0, "maximum": 50.0},
+    "sigma_high": {"distribution": "Uniform", "minimum": 1.0, "maximum": 12.0}
+  }
+}

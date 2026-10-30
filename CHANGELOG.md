@@ -1,24 +1,13 @@
 # Changelog
 
-## 0.4.0 — 2026-08-28 student-baseline hardening
+## 0.5.0 (4 September 2026)
 
-- Added normalized event-posterior row weights with backward-compatible v1
-  event-contract reading.
-- Corrected the event integral for unequal-weight PE products.
-- Made score-difference Monte Carlo gates well-defined at a scientifically
-  valid null \(\Delta S\simeq0\).
-- Added mixed absolute/relative joint-versus-prequential comparison tolerance.
-- Added bounded-memory selection-contract iteration and mathematically
-  equivalent streamed efficiency/ESS accumulation.
-- Added strict layout, manifest filename, download destination, and extraction
-  target containment checks.
-- Added archive member-count, expanded-size, expansion-ratio, duplicate-name,
-  member-type, and free-space preflight.
-- Kept Conda environments and package caches laptop-local; external storage is
-  required only for scientific data and generated scientific products.
-- Added the frozen bidirectional detected-space power decision and CLI.
-- Corrected `mock_calibration_passed` to `false`; toy validation is not the
-  public-release O4-sized qualification.
-- Added `STUDENT_RESEARCH_PLAN.md` and aligned the compact roadmap and agent
-  instructions with the vertical-slice-then-power-gate sequence.
-- Expanded the offline regression suite from 22 to 43 tests.
+Replaced the primary confounded released-model screening pair with a matched bending-continuum/extra-high-component design. Archived the original charter and long plan; preserved data/storage safety, core weighted statistical objects and regression tests.
+
+Added normalized matched one-dimensional and full candidate BBH populations; true finite-prior training and frozen prediction; noisy-observation generation with consistent toy detection/PE; saved/reloaded integration; independent quadrature comparisons; conditional power and separately repeated-training randomized SBC.
+
+Added prior-coordinate Jacobians, explicit HDF5 standardization, optional training-only Bilby likelihood/fitting entry points, frozen catalog checks and score output, support diagnostics, guarded iid uncertainty helpers and a confidence-interval-aware power consumer. New candidate scientific priors remain unfrozen. No real-catalog result is asserted.
+
+Added a minimal local setup route, updated commands, student ownership/meeting instructions, milestone/report templates, literature positioning, migration notes and executed build evidence. Default downloads no longer include unrelated released-model posteriors; a legacy manifest preserves them. Real through-O3 release qualification remains explicit work.
+
+The v0.4 regression implementation of the old power assessor remains for compatibility, but the CLI now uses the uncertainty-aware assessor. Old published build claims are archived rather than attributed to this code.

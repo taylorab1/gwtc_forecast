@@ -1,0 +1,42 @@
+{
+  "version": "0.5.0",
+  "archive_role": "complete_replacement_development_repository",
+  "scientific_design_date": "2026-09-04",
+  "build_record_utc": "2026-09-05T06:11:38.402373+00:00",
+  "original_zip_sha256": "fcc003a88c1a11b934fa701e6b779823513141ba6146d4998023db359f393991",
+  "source_manifest_sha256": "000b587184ed084d2f5e40f4cbe50470d67b97553086a49a8a966560bd6c3df5",
+  "pytest_passed": 75,
+  "real_data_analyzed": false,
+  "real_bbh_training_executed": false,
+  "production_qualified": false,
+  "optional_bilby_installed": false,
+  "ruff_executed": false,
+  "completed_demo": {
+    "training_events": 40,
+    "heldout_events_per_period": 24,
+    "periods": [
+      "O4a",
+      "O4b"
+    ],
+    "conditional_power_replicates_per_direction": 20,
+    "reference_delta_log_score": 2.688071072694221,
+    "pe_injection_delta_log_score": 2.6044357198944255,
+    "phase_seconds": {
+      "conditional_power": 0.2972923350000656,
+      "continuum_lowpeak": 2.236987261999957,
+      "continuum_lowpeak_highpeak": 24.60317599200016,
+      "generate_and_reload_contracts": 0.6239739969998936
+    }
+  },
+  "repeated_training_calibration_replicates_per_direction": 20,
+  "notebook": "notebooks/00_start_here.ipynb (executed without errors)",
+  "not_run": [
+    "public-data download and release-specific prior/selection qualification",
+    "actual Bilby/Dynesty continuous BBH fit",
+    "realistic measurement-aware 2000-per-direction qualification",
+    "full O4 real-data predictive analysis",
+    "user laptop/Conda/external disk setup",
+    "Ruff lint"
+  ],
+  "attempt_note": "An earlier identical-design default demo attempt timed out before completion. The completed retry added progress messages and phase timing; scientific inputs/seed were unchanged. Incomplete output is not used as evidence."
+}

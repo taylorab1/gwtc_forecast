@@ -1,0 +1,16 @@
+{
+  "executable": "/opt/pyvenv/bin/python",
+  "packages": {
+    "bilby": null,
+    "gwpopulation": null,
+    "gwtc-forecast": "0.5.0",
+    "h5py": "3.15.1",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "pesummary": null,
+    "popsummary": null,
+    "scipy": "1.17.0",
+    "zenodo-get": null
+  },
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]"
+}

@@ -1,0 +1,813 @@
+{
+  "scope": "synthetic_prior_predictive_repeated_training_calibration",
+  "qualifies_real_data": false,
+  "seed": 20260905,
+  "replicates_per_direction": 20,
+  "directions": {
+    "continuum_lowpeak": [
+      {
+        "replicate": 0,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.0166839359515336,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.03361996518294918,
+          "m_break": 0.6540176264624784,
+          "f_low": 0.3459513145928131
+        }
+      },
+      {
+        "replicate": 1,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 0.8432138241440796,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.9690242014105724,
+          "m_break": 0.6694217302818812,
+          "f_low": 0.9776088762568124
+        }
+      },
+      {
+        "replicate": 2,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 2.611146664258939,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.44484330212413625,
+          "m_break": 0.16543847564295772,
+          "f_low": 0.34660109191467364
+        }
+      },
+      {
+        "replicate": 3,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.7245471235677101,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.42529834394886284,
+          "m_break": 0.5176852419773308,
+          "f_low": 0.7019995894599094
+        }
+      },
+      {
+        "replicate": 4,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.548228262067294,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.70396408408556,
+          "m_break": 0.7743844292408484,
+          "f_low": 0.417117543374468
+        }
+      },
+      {
+        "replicate": 5,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.2850792794232717,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.18438044559073374,
+          "m_break": 0.826768690894033,
+          "f_low": 0.08194784938172316
+        }
+      },
+      {
+        "replicate": 6,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.3131572703358714,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.6193273646025961,
+          "m_break": 0.2209954726880224,
+          "f_low": 0.5772889051821237
+        }
+      },
+      {
+        "replicate": 7,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -1.2155337151096077,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.9720957219628612,
+          "m_break": 0.7255003827227763,
+          "f_low": 0.18667340769312638
+        }
+      },
+      {
+        "replicate": 8,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.176977833127097,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.18902349194850976,
+          "m_break": 0.4558137000960078,
+          "f_low": 0.7085342922204214
+        }
+      },
+      {
+        "replicate": 9,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 35.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.161279893013841,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.9567808803153826,
+          "m_break": 0.1515595891908793,
+          "f_low": 0.03139230135610274
+        }
+      },
+      {
+        "replicate": 10,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.6715052617303243,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.7388933585224409,
+          "m_break": 0.7839956833875468,
+          "f_low": 0.8420377100693464
+        }
+      },
+      {
+        "replicate": 11,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 2.2532273522442097,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.5217276728267364,
+          "m_break": 0.12996275693917503,
+          "f_low": 0.12683548914991435
+        }
+      },
+      {
+        "replicate": 12,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 2.656669065323527,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.09283270277635511,
+          "m_break": 0.42448952564710407,
+          "f_low": 0.31477453046329507
+        }
+      },
+      {
+        "replicate": 13,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 2.071871518607736,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.9126649233949273,
+          "m_break": 0.473437316191806,
+          "f_low": 0.4700769004244539
+        }
+      },
+      {
+        "replicate": 14,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.1403624667068755,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.07030627715441624,
+          "m_break": 0.23214935931776995,
+          "f_low": 0.8180703880020236
+        }
+      },
+      {
+        "replicate": 15,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.9644258620229813,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.6852817020687809,
+          "m_break": 0.7164196666265294,
+          "f_low": 0.6737581478334076
+        }
+      },
+      {
+        "replicate": 16,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.11933222152512002,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.6202129013038903,
+          "m_break": 0.7956633145357409,
+          "f_low": 0.2515215397379644
+        }
+      },
+      {
+        "replicate": 17,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.5687637842439202,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.721343411188439,
+          "m_break": 0.28171643389968554,
+          "f_low": 0.7674763348001612
+        }
+      },
+      {
+        "replicate": 18,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.401302859207604,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.07674895163837957,
+          "m_break": 0.11116858819790537,
+          "f_low": 0.05325171272098655
+        }
+      },
+      {
+        "replicate": 19,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.4023271352428743,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.20421929168465883,
+          "m_break": 0.4726064560898886,
+          "f_low": 0.8799080835083135
+        }
+      }
+    ],
+    "continuum_lowpeak_highpeak": [
+      {
+        "replicate": 0,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 30.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -1.4011350546431984,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.9577480420908403,
+          "m_break": 0.27200064412678915,
+          "f_low": 0.9619937215424668,
+          "f_high": 0.5852267835801466
+        }
+      },
+      {
+        "replicate": 1,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "f_high": 0.15,
+          "mu_high": 40.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 5.631173335812768,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.4378020513443541,
+          "m_break": 0.6828578637310898,
+          "f_low": 0.029819164808477364,
+          "f_high": 0.14112810067133932
+        }
+      },
+      {
+        "replicate": 2,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.2,
+          "f_high": 0.15,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.0549130239573117,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.36707612212080604,
+          "m_break": 0.8500348773289244,
+          "f_low": 0.7991646484326983,
+          "f_high": 0.6678321034178155
+        }
+      },
+      {
+        "replicate": 3,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.3,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 4.143619035858457,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.7097833648496764,
+          "m_break": 0.10810430134017474,
+          "f_low": 0.5233627366773798,
+          "f_high": 0.1251983068623717
+        }
+      },
+      {
+        "replicate": 4,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 30.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.5379546565476474,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.4235775724346066,
+          "m_break": 0.21480752753551088,
+          "f_low": 0.5838804723138881,
+          "f_high": 0.627630885115409
+        }
+      },
+      {
+        "replicate": 5,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "f_high": 0.15,
+          "mu_high": 30.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.41763646552194444,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.3352590920498524,
+          "m_break": 0.10155179638852384,
+          "f_low": 0.0792672681465175,
+          "f_high": 0.15547934151927237
+        }
+      },
+      {
+        "replicate": 6,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "f_high": 0.3,
+          "mu_high": 30.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.030203158323147,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.25486991434695905,
+          "m_break": 0.3802522295265695,
+          "f_low": 0.8552322625872376,
+          "f_high": 0.940785733440499
+        }
+      },
+      {
+        "replicate": 7,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "f_high": 0.3,
+          "mu_high": 30.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 2.831517106803169,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.893475968052319,
+          "m_break": 0.2428976482738786,
+          "f_low": 0.5637799083291306,
+          "f_high": 0.8860833010816591
+        }
+      },
+      {
+        "replicate": 8,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.14977990426116605,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.1860237528136724,
+          "m_break": 0.8542726495158732,
+          "f_low": 0.3213582178702656,
+          "f_high": 0.132633716554794
+        }
+      },
+      {
+        "replicate": 9,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.08120960608410854,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.5716734066733163,
+          "m_break": 0.16977926713886318,
+          "f_low": 0.7765428352734907,
+          "f_high": 0.08833794083505721
+        }
+      },
+      {
+        "replicate": 10,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 0.46625105251318644,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.1173871860853776,
+          "m_break": 0.5755240109814661,
+          "f_low": 0.3712126381140725,
+          "f_high": 0.2912091756734357
+        }
+      },
+      {
+        "replicate": 11,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.3,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 14.809391352280798,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.6498216402056243,
+          "m_break": 0.26466036569734674,
+          "f_low": 0.6092850190548201,
+          "f_high": 0.5264360418734965
+        }
+      },
+      {
+        "replicate": 12,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 45.0,
+          "f_low": 0.05,
+          "f_high": 0.3,
+          "mu_high": 30.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 14.206364745490134,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.8847000033465471,
+          "m_break": 0.8100512859394717,
+          "f_low": 0.08926674416248385,
+          "f_high": 0.9906046398351402
+        }
+      },
+      {
+        "replicate": 13,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 5.0,
+          "m_break": 35.0,
+          "f_low": 0.2,
+          "f_high": 0.3,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 3.481996440203581,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.886334421973542,
+          "m_break": 0.44347476245029493,
+          "f_low": 0.5255913961518921,
+          "f_high": 0.3860737359609041
+        }
+      },
+      {
+        "replicate": 14,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 3.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.4455280972462603,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.22303622620927638,
+          "m_break": 0.20091247776891957,
+          "f_low": 0.14069142302164273,
+          "f_high": 0.5147915662438514
+        }
+      },
+      {
+        "replicate": 15,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 5.0,
+          "m_break": 25.0,
+          "f_low": 0.05,
+          "f_high": 0.3,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 11.830651853687066,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.50996288203269,
+          "m_break": 0.28679000412388733,
+          "f_low": 0.30706642362271286,
+          "f_high": 0.007925435280993593
+        }
+      },
+      {
+        "replicate": 16,
+        "truth": {
+          "alpha_low": 1.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.2,
+          "f_high": 0.15,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.6326972408915097,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.20619882245272586,
+          "m_break": 0.8471947942244171,
+          "f_low": 0.5085896273239792,
+          "f_high": 0.3972126522231817
+        }
+      },
+      {
+        "replicate": 17,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 45.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 1.0230098579879865,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.011349212718174892,
+          "m_break": 0.8382647446290576,
+          "f_low": 0.6200577557120263,
+          "f_high": 0.5284217158788268
+        }
+      },
+      {
+        "replicate": 18,
+        "truth": {
+          "alpha_low": 3.0,
+          "alpha_high": 3.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 40.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": 4.486317584678943,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.4296065644856631,
+          "m_break": 0.252578857155624,
+          "f_low": 0.9158265969630289,
+          "f_high": 0.9735264965895366
+        }
+      },
+      {
+        "replicate": 19,
+        "truth": {
+          "alpha_low": 2.0,
+          "alpha_high": 5.0,
+          "m_break": 25.0,
+          "f_low": 0.2,
+          "f_high": 0.05,
+          "mu_high": 30.0,
+          "sigma_high": 7.0,
+          "break_width": 0.18,
+          "mu_low": 10.0,
+          "sigma_low": 1.8
+        },
+        "signed_score": -0.9190878709659245,
+        "randomized_sbc_ranks": {
+          "alpha_low": 0.07847495497276999,
+          "m_break": 0.40489739560914184,
+          "f_low": 0.8084089946509943,
+          "f_high": 0.04307832722353158
+        }
+      }
+    ]
+  },
+  "interpretation": "SBC ranks should be uniform in repeated draws from the specified finite prior. Small samples are illustrative, not certification. Predictive classification can be weak despite calibrated inference."
+}

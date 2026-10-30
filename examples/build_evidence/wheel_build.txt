@@ -1,0 +1,10 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /mnt/data/refurbished/gwtc_forecast
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: gwtc-forecast
+  Building wheel for gwtc-forecast (pyproject.toml): started
+  Building wheel for gwtc-forecast (pyproject.toml): finished with status 'done'
+  Created wheel for gwtc-forecast: filename=gwtc_forecast-0.5.0-py3-none-any.whl size=103060 sha256=8d3e4cdcbbac27b98350dd475e71e6556ecca4a238ab75969698d55d87077ec6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-8gvkltb0/wheels/3d/53/ab/3c8b68f50451069e9e61978dcb9360901bc4ee956ec0db0b5f
+Successfully built gwtc-forecast

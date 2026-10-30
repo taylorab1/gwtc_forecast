@@ -29,7 +29,6 @@ from .verify import verify_files
 from .workflows.common import write_json_atomic
 from .workflows.data_inventory import build_data_inventory
 from .workflows.detected_power_gate import (
-    evaluate_detected_power_gate,
     load_power_gate_config,
     load_score_payload,
     write_power_decision,
@@ -38,6 +37,77 @@ from .workflows.mapping_status import inspect_mapping_status
 from .workflows.pe_release_index import build_pilot_pe_release_index
 from .workflows.pilot_readiness import build_readiness_report
 from .workflows.toy_validation import run_toy_validation
+
+
+def _new_output(args, subdir, *, small_synthetic=False):
+    from datetime import datetime, timezone
+    if getattr(args, "output", None) is not None:
+        out = args.output.expanduser().resolve()
+        if small_synthetic:
+            # Explicit small teaching output outside the repository is allowed.
+            cwd = Path.cwd().resolve()
+            candidates = [cwd, *cwd.parents, Path(__file__).resolve().parents[2]]
+            roots = [p for p in candidates if (p / "pyproject.toml").exists()
+                     and (p / "src" / "gwtc_forecast").is_dir()]
+            if any(out.is_relative_to(root) for root in roots):
+                raise CommandError("Put synthetic output outside the repository, e.g. /tmp/gwtc-demo-attempt1")
+            return out
+    project = load_project_config(getattr(args, "project_config", None))
+    paths = bootstrap_storage(project)
+    if getattr(args, "output", None) is not None:
+        out = args.output.expanduser().resolve()
+        if not out.is_relative_to(paths.results.resolve()):
+            raise CommandError("Real fit/score output must be below the configured external results directory")
+        return out
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ")
+    return paths.results / subdir / stamp
+
+
+def command_feature_demo(args):
+    from .experiments.feature_demo import run_feature_demo
+    out = _new_output(args, "synthetic/feature_demo", small_synthetic=True)
+    report = run_feature_demo(out, config_path=args.demo_config,
+                              power_replicates=args.power_replicates,
+                              make_plots=not args.no_plots,
+                              progress=lambda message: print(message, flush=True))
+    print(f"Synthetic report: {out / 'report.md'}")
+    print(f"Reference delta log score: {report['reference_delta_log_score']:.6f}")
+    print("Synthetic development only. No real GW claim or production qualification.")
+    return 0 if all(report["implementation_checks"].values()) else 1
+
+
+def command_feature_calibration(args):
+    from .experiments.calibration import run_repeated_calibration
+    out = _new_output(args, "synthetic/repeated_calibration", small_synthetic=True)
+    run_repeated_calibration(out, config_path=args.demo_config,
+                             replicates=args.replicates, seed=args.seed)
+    print(f"Synthetic repeated-training calibration: {out / 'calibration.json'}")
+    return 0
+
+
+def command_study_audit(args):
+    from .inference.study import audit_study
+    report = audit_study(args.spec)
+    print(json.dumps(report, indent=2))
+    return 0  # Reporting deliberate missing inputs is a successful audit.
+
+
+def command_study_fit(args):
+    from .inference.study import fit_study
+    out = _new_output(args, "training")
+    fit_study(args.spec, feature=args.model == "highpeak", outdir=out,
+              seed=args.seed, nlive=args.nlive)
+    print(f"Training result, not yet sampler-qualified: {out}")
+    return 0
+
+
+def command_study_score(args):
+    from .inference.study import score_study
+    out = _new_output(args, "retrospective_scoring")
+    report = score_study(args.spec, outdir=out)
+    print(f"Candidate frozen comparison: {out}")
+    print(f"Feature-minus-continuum score: {report['delta_feature_minus_continuum']}")
+    return 0
 
 
 class CommandError(RuntimeError):
@@ -338,26 +408,38 @@ def command_science_smoke(args: argparse.Namespace) -> int:
 
 
 def command_power_gate(args: argparse.Namespace) -> int:
+    from dataclasses import asdict
+    from .statistics.qualification import assess_bidirectional
     config = load_power_gate_config(args.gate_config.expanduser().resolve())
     scores, input_metadata = load_score_payload(args.scores.expanduser().resolve())
-    decision = evaluate_detected_power_gate(scores, config=config)
+    decision = assess_bidirectional(
+        scores, expected_models=config.generating_models,
+        final_count=config.final_replicates_per_direction,
+        median_target=config.minimum_median_signed_score,
+        wrong_sign_limit=config.maximum_wrong_sign_probability,
+        q05_target=config.minimum_q05_signed_score,
+        maximum_median_se=config.maximum_median_standard_error,
+        maximum_wrong_sign_se=config.maximum_wrong_sign_standard_error,
+        bootstrap_replicates=config.bootstrap_replicates,
+        seed=config.master_seed,
+    )
+    decision["config"] = asdict(config)
     decision["input_score_file"] = str(args.scores.expanduser().resolve())
     decision["input_metadata"] = input_metadata
-    output = (
-        args.output.expanduser().resolve()
-        if args.output is not None
-        else args.scores.expanduser().resolve().with_name("detected_power_decision.json")
-    )
+    decision["scope"] = "Numerical investment criteria only. Input scientific validity must be established separately."
+    output = (args.output.expanduser().resolve() if args.output is not None
+              else args.scores.expanduser().resolve().with_name("detected_power_decision.json"))
+    if output.exists():
+        raise CommandError("Decision output exists; use a new attempt output instead of overwriting evidence")
     write_power_decision(output, decision)
     print(f"Detected-power decision: {decision['decision']}")
     for model, summary in decision["directions"].items():
-        print(
-            f"  {model}: median={summary['median_signed_score']:.6f}, "
-            f"q05={summary['q05_signed_score']:.6f}, "
-            f"wrong-sign={summary['wrong_sign_probability']:.4f}, "
-            f"replicates={summary['replicates']}"
-        )
+        print(f"  {model}: median={summary['median']:.6f}, "
+              f"q05={summary['q05']:.6f}, "
+              f"wrong-sign={summary['wrong_sign_probability']:.4f}, "
+              f"replicates={summary['replicates']}")
     print(f"Decision artifact: {output}")
+    print("No automatic scientific validation or production authorization.")
     return 0
 
 
@@ -440,6 +522,41 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    demo = subparsers.add_parser("feature-demo", help="Run the matched train/freeze/predict synthetic experiment")
+    demo.add_argument("--output", type=Path)
+    demo.add_argument("--project-config", type=Path)
+    demo.add_argument("--demo-config", type=Path)
+    demo.add_argument("--power-replicates", type=int)
+    demo.add_argument("--no-plots", action="store_true")
+    demo.set_defaults(func=command_feature_demo)
+
+    calibration = subparsers.add_parser("feature-calibration", help="Repeat independent synthetic training and test catalogs")
+    calibration.add_argument("--output", type=Path)
+    calibration.add_argument("--project-config", type=Path)
+    calibration.add_argument("--demo-config", type=Path)
+    calibration.add_argument("--replicates", type=int, default=20)
+    calibration.add_argument("--seed", type=int, default=20260905)
+    calibration.set_defaults(func=command_feature_calibration)
+
+    sa = subparsers.add_parser("study-audit", help="List missing real-study inputs without scoring events")
+    sa.add_argument("--spec", type=Path, default=Path("config/real_study.example.json"))
+    sa.set_defaults(func=command_study_audit)
+
+    sf = subparsers.add_parser("study-fit", help="Fit validated through-O3 contracts with a frozen matched model")
+    sf.add_argument("--spec", type=Path, required=True)
+    sf.add_argument("--model", choices=["continuum", "highpeak"], required=True)
+    sf.add_argument("--output", type=Path)
+    sf.add_argument("--project-config", type=Path)
+    sf.add_argument("--seed", type=int, default=20260904)
+    sf.add_argument("--nlive", type=int, default=500)
+    sf.set_defaults(func=command_study_fit)
+
+    ss = subparsers.add_parser("study-score", help="Score qualified frozen posteriors on explicit held-out contracts")
+    ss.add_argument("--spec", type=Path, required=True)
+    ss.add_argument("--output", type=Path)
+    ss.add_argument("--project-config", type=Path)
+    ss.set_defaults(func=command_study_score)
 
     bootstrap = subparsers.add_parser("bootstrap", help="Create the external data tree")
     _add_config_options(bootstrap)

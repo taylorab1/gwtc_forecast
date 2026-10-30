@@ -1,0 +1,45 @@
+usage: gwtc-forecast [-h]
+                     {feature-demo,feature-calibration,study-audit,study-fit,study-score,bootstrap,status,paths,plan,download,verify,extract,inventory,inspect-hdf5,inspect-pe,pe-index,inspect-selection,discover-hyperposteriors,science-smoke,power-gate,mapping-status,readiness,audit-repo,versions} ...
+
+Guarded data management and prediction-first statistics for the GWTC catalog-
+to-catalog forecasting project.
+
+positional arguments:
+  {feature-demo,feature-calibration,study-audit,study-fit,study-score,bootstrap,status,paths,plan,download,verify,extract,inventory,inspect-hdf5,inspect-pe,pe-index,inspect-selection,discover-hyperposteriors,science-smoke,power-gate,mapping-status,readiness,audit-repo,versions}
+    feature-demo        Run the matched train/freeze/predict synthetic
+                        experiment
+    feature-calibration
+                        Repeat independent synthetic training and test
+                        catalogs
+    study-audit         List missing real-study inputs without scoring events
+    study-fit           Fit validated through-O3 contracts with a frozen
+                        matched model
+    study-score         Score qualified frozen posteriors on explicit held-out
+                        contracts
+    bootstrap           Create the external data tree
+    status              Report storage and project status
+    paths               Print shell exports for external paths
+    plan                Resolve and size the pilot download
+    download            Download only the pinned pilot
+    verify              Verify all pilot raw files
+    extract             Safely extract required archives
+    inventory           Inspect downloaded releases without interpreting them
+    inspect-hdf5        Inventory an arbitrary HDF5 file
+    inspect-pe          Inspect one selected event PE file
+    pe-index            Index candidate analysis labels from the lightweight
+                        PE summary tables
+    inspect-selection   Audit the documented O4 injection table fields without
+                        loading it
+    discover-hyperposteriors
+                        List safe candidate files in extracted GWTC-3 analyses
+    science-smoke       Validate event, selection, predictive, and prequential
+                        statistics on mocks
+    power-gate          Evaluate frozen bidirectional detected-space mock-
+                        score thresholds
+    mapping-status      Report unresolved PE, injection, and model mappings
+    readiness           Report whether real-data scoring gates are open
+    audit-repo          Reject large data/results accidentally placed in Git
+    versions            Print runtime package versions
+
+options:
+  -h, --help            show this help message and exit
